@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
+            $table->string('model');
+            $table->string('manufacturer');
+            $table->string('year');
+            $table->string('color');
+            $table->string('license_plate');
+            $table->unsignedBigInteger('user_id');
+            $table->foreig('user_id')->references('id')->on('id')->on('user');
             $table->timestamps();
         });
     }
