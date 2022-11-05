@@ -21,7 +21,8 @@ return new class extends Migration
             $table->string('color');
             $table->string('license_plate');
             $table->unsignedBigInteger('user_id');
-            $table->foreig('user_id')->references('id')->on('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('id')->on('user');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
