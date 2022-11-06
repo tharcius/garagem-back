@@ -4,7 +4,6 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\UserRepositoryEloquent;
-use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
@@ -12,7 +11,7 @@ class IndexController extends Controller
     {
     }
 
-    public function execute(Request $request)
+    public function execute()
     {
         return response()->json($this->users->with(['cars'])->all());
     }

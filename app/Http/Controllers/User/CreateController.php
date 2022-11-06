@@ -13,12 +13,6 @@ class CreateController extends Controller
     {
     }
 
-    /**
-     * Handle the incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function execute(Request $request)
     {
         $this->validate(

@@ -11,17 +11,20 @@
 |
 */
 
-
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-
-});
-
-
 $router->group(['prefix' => 'users'], function () use ($router) {
     $router->get('/', 'User\\IndexController@execute');
     $router->post('/', 'User\\CreateController@execute');
     $router->get('/{id}', 'User\\ShowController@execute');
     $router->patch('/{id}', 'User\\UpdateController@execute');
     $router->delete('/{id}', 'User\\DestroyController@execute');
+});
+
+$router->group(['prefix' => 'cars'], function () use ($router) {
+    $router->get('/', 'Car\\IndexController@execute');
+    $router->post('/', 'Car\\CreateController@execute');
+    $router->get('/{id}', 'Car\\ShowController@execute');
+    $router->patch('/{id}', 'Car\\UpdateController@execute');
+    $router->delete('/{id}', 'Car\\DestroyController@execute');
+    $router->post('/bind', 'Car\\BindController@execute');
+    $router->post('/unbind/{id}', 'Car\\UnbindController@execute');
 });
