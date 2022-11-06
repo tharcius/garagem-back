@@ -8,7 +8,8 @@
         "php": "^8.0",
         "flipbox/lumen-generator": "^9.1",
         "laravel/lumen-framework": "^9.0",
-        "prettus/l5-repository": "^2.8"
+        "prettus/l5-repository": "^2.8",
+        "thedevsaddam/lumen-route-list": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
